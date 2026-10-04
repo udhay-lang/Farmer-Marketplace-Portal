@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<!-- ADMIN LOGIN GATE -->
+<section class="section" id="adminLoginSection">
+  <div class="container">
+    <div class="form-card">
+      <h2 style="text-align:center;">Admin Login</h2>
+      <p class="text-center" style="margin-bottom:1.5rem;">Restricted access &mdash; portal administrators only.</p>
+      <form id="adminLoginForm" novalidate>
+        <div class="field">
+          <label for="aEmail">Admin email</label>
+          <input type="email" id="aEmail" required>
+          <span class="error-text">Incorrect email or password.</span>
+        </div>
+        <div class="field">
+          <label for="aPassword">Password</label>
+          <input type="password" id="aPassword" required>
+          <span class="error-text">Incorrect email or password.</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+      <hr class="divider">
+      <p class="text-muted text-center" style="font-size:.82rem;">Demo admin: admin@farmconnect.com / admin123</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<div class="dash-shell hidden" id="adminShell">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-user">
+      <span class="dot">A</span>
+      <div><b>Portal Admin</b><span>admin@farmconnect.com</span></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="#overview" data-tab="overview" class="active">Overview</a>
+      <a href="#farmers" data-tab="farmers">Farmers</a>
+      <a href="#customers" data-tab="customers">Customers</a>
+      <a href="#products" data-tab="products">Products</a>
+      <a href="#orders" data-tab="orders">Orders</a>
+      <a href="#" class="logout-link" id="adminLogout">Log Out</a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-head">
+      <button class="icon-btn dash-toggle" id="dashToggle"></button>
+      <div>
+        <h2 style="margin-bottom:.2rem;" id="panelTitle">Overview</h2>
+        <p class="text-muted" id="panelSub">Platform-wide statistics and management.</p>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="dash-panel" id="panel-overview">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="ico" id="icoFarmers"></div><b id="statFarmers">0</b><span>Registered farmers</span></div>
+        <div class="stat-card"><div class="ico" id="icoCustomers"></div><b id="statCustomers">0</b><span>Registered customers</span></div>
+        <div class="stat-card"><div class="ico" id="icoProducts"></div><b id="statProducts">0</b><span>Active products</span></div>
+        <div class="stat-card accent"><div class="ico" id="icoOrders"></div><b id="statOrders">0</b><span>Total orders</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Platform revenue</h3></div>
+        <div class="stat-grid" style="margin-bottom:0;">
+          <div class="stat-card"><b id="statRevenue">&#8377;0</b><span>Total order value processed</span></div>
+          <div class="stat-card"><b id="statAvgOrder">&#8377;0</b><span>Average order value</span></div>
+          <div class="stat-card"><b id="statOrganic">0</b><span>Organic listings</span></div>
+          <div class="stat-card"><b id="statLowStock">0</b><span>Low / out-of-stock items</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FARMERS -->
+    <section class="dash-panel hidden" id="panel-farmers">
+      <div class="panel">
+        <div class="panel-head"><h3>All farmers (<span id="farmerCount">0</span>)</h3></div>
+        <div class="table-scroll">
+          <table class="data-table"><thead><tr><th>Name</th><th>Farm</th><th>Location</th><th>Contact</th><th>Joined</th><th>Products</th><th></th></tr></thead>
+          <tbody id="farmersBody"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMERS -->
+    <section class="dash-panel hidden" id="panel-customers">
+      <div class="panel">
+        <div class="panel-head"><h3>All customers (<span id="customerCount">0</span>)</h3></div>
+        <div class="table-scroll">
+          <table class="data-table"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th><th>Orders</th><th></th></tr></thead>
+          <tbody id="customersBody"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="dash-panel hidden" id="panel-products">
+      <div class="panel">
+        <div class="panel-head"><h3>All products (<span id="productCount">0</span>)</h3></div>
+        <div class="table-scroll">
+          <table class="data-table"><thead><tr><th>Product</th><th>Farmer</th><th>Category</th><th>Price</th><th>Stock</th><th></th></tr></thead>
+          <tbody id="productsBody"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section class="dash-panel hidden" id="panel-orders">
+      <div class="panel">
+        <div class="panel-head"><h3>All orders (<span id="orderCount">0</span>)</h3></div>
+        <div class="table-scroll">
+          <table class="data-table"><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
+          <tbody id="ordersBody"></tbody></table>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

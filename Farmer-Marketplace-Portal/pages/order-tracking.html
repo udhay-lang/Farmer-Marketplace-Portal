@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Order &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Order Tracking</div>
+    <h1 style="margin-bottom:.4rem;">Track Your Order</h1>
+    <p style="margin-bottom:0;">Enter your order ID or view your recent orders from your dashboard.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="form-card form-wide" style="max-width:640px;margin-bottom:2.5rem;">
+      <div class="field-row" style="align-items:flex-end;">
+        <div class="field" style="margin-bottom:0;">
+          <label for="orderIdInput">Order ID</label>
+          <input type="text" id="orderIdInput" placeholder="e.g. FC12345678">
+        </div>
+        <button class="btn btn-primary" id="trackBtn">Track</button>
+      </div>
+    </div>
+
+    <div id="trackResult" class="hidden">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h3 id="resOrderId">Order</h3>
+            <p class="text-muted" id="resMeta" style="margin-bottom:0;font-size:.85rem;"></p>
+          </div>
+          <span class="status-chip" id="resStatusChip"></span>
+        </div>
+
+        <div class="tracker" id="tracker"></div>
+
+        <hr class="divider">
+        <h4 style="margin-bottom:1rem;">Items in this order</h4>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
+            <tbody id="resItemsBody"></tbody>
+          </table>
+        </div>
+        <hr class="divider">
+        <div class="grid grid-2" style="gap:2rem;">
+          <div>
+            <h4 style="margin-bottom:.5rem;">Delivery address</h4>
+            <p id="resAddress" style="margin-bottom:0;"></p>
+          </div>
+          <div>
+            <h4 style="margin-bottom:.5rem;">Payment</h4>
+            <p id="resPayment" style="margin-bottom:0;"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="trackEmpty" class="empty-state hidden">
+      <h3>Order not found</h3>
+      <p>Please double-check the order ID and try again.</p>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/order-tracking.js"></script>
+</body>
+</html>

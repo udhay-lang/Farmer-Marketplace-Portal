@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
+    <h1 style="margin-bottom:0;">Checkout</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="checkout-layout">
+      <div>
+        <div class="panel">
+          <div class="panel-head"><h3>Contact details</h3></div>
+          <form id="checkoutForm" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="fullName">Full name</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <span class="error-text">Enter your full name.</span>
+              </div>
+              <div class="field">
+                <label for="phone">Mobile number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-text">Enter a valid 10-digit mobile number.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="address">Delivery address</label>
+              <textarea id="address" name="address" rows="3" required></textarea>
+              <span class="error-text">Enter your full delivery address.</span>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+                <span class="error-text">Enter your city.</span>
+              </div>
+              <div class="field">
+                <label for="pincode">PIN code</label>
+                <input type="text" id="pincode" name="pincode" required>
+                <span class="error-text">Enter a valid 6-digit PIN code.</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Payment method</h3></div>
+          <label class="pay-option selected" data-pay="cod">
+            <input type="radio" name="payment" value="cod" checked>
+            <span></span>
+            <span><b>Cash on Delivery</b><span>Pay when your order arrives at your doorstep</span></span>
+          </label>
+          <label class="pay-option" data-pay="online">
+            <input type="radio" name="payment" value="online">
+            <span></span>
+            <span><b>Online Payment</b><span>Pay now via UPI / Card / Net Banking (demo)</span></span>
+          </label>
+
+          <div id="onlineFields" class="hidden mt-4">
+            <div class="field-row">
+              <div class="field"><label for="cardNumber">Card / UPI ID</label><input type="text" id="cardNumber" placeholder="4242 4242 4242 4242 or name@upi"></div>
+              <div class="field"><label for="cardExpiry">Expiry (demo)</label><input type="text" id="cardExpiry" placeholder="MM/YY"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <h3 style="font-size:1.1rem;">Order Summary</h3>
+        <div id="miniItems"></div>
+        <hr class="divider" style="margin:1rem 0;">
+        <div class="summary-row"><span>Subtotal</span><span id="coSubtotal">&#8377;0</span></div>
+        <div class="summary-row"><span>Delivery charge</span><span id="coDelivery">&#8377;0</span></div>
+        <div class="summary-row total"><span>Total</span><span id="coTotal">&#8377;0</span></div>
+        <button class="btn btn-primary btn-block mt-4" id="placeOrderBtn">Place Order</button>
+        <p class="text-muted text-center mt-4" style="font-size:.8rem;margin-bottom:0;">By placing this order, you agree to FarmConnect's terms of sale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/checkout.js"></script>
+</body>
+</html>

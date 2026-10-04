@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBF6E9"/>
+      <stop offset="100%" stop-color="#F1E7CE"/>
+    </linearGradient>
+    <linearGradient id="field1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B9750"/>
+      <stop offset="100%" stop-color="#4C7A3C"/>
+    </linearGradient>
+    <linearGradient id="field2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#365C2A"/>
+      <stop offset="100%" stop-color="#25401C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="640" fill="url(#sky)"/>
+  <circle cx="650" cy="110" r="80" fill="#E7B65C" opacity="0.5"/>
+  <path d="M0 420 Q 200 360 400 410 T 800 400 L800 640 L0 640 Z" fill="url(#field1)"/>
+  <path d="M0 480 Q 220 440 420 480 T 800 470 L800 640 L0 640 Z" fill="url(#field2)"/>
+  <g stroke="#F1E7CE" stroke-width="3" opacity="0.5">
+    <line x1="60" y1="430" x2="60" y2="470"/>
+    <line x1="140" y1="420" x2="140" y2="460"/>
+    <line x1="220" y1="435" x2="220" y2="475"/>
+    <line x1="300" y1="415" x2="300" y2="455"/>
+    <line x1="380" y1="430" x2="380" y2="470"/>
+    <line x1="460" y1="418" x2="460" y2="458"/>
+    <line x1="540" y1="432" x2="540" y2="472"/>
+    <line x1="620" y1="420" x2="620" y2="460"/>
+    <line x1="700" y1="435" x2="700" y2="475"/>
+  </g>
+  <g transform="translate(560,300)">
+    <rect x="-4" y="0" width="8" height="110" fill="#6B4C3A"/>
+    <circle cx="0" cy="0" r="36" fill="#D9A441"/>
+  </g>
+  <g transform="translate(230,260) scale(1.1)">
+    <ellipse cx="0" cy="150" rx="46" ry="10" fill="#25401C" opacity="0.3"/>
+    <rect x="-6" y="40" width="12" height="110" fill="#5C4430"/>
+    <circle cx="0" cy="20" r="30" fill="#8FBF6A"/>
+    <circle cx="-24" cy="42" r="22" fill="#8FBF6A"/>
+    <circle cx="24" cy="42" r="22" fill="#8FBF6A"/>
+  </g>
+</svg>

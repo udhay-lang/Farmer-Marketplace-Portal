@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Product &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="farmer-dashboard.html">Farmer Dashboard</a> / Add Product</div>
+    <h1 style="margin-bottom:.4rem;">List a new product</h1>
+    <p style="margin-bottom:0;">Fill in the details below to add your produce to the marketplace.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="form-card form-wide">
+      <form id="addProductForm" novalidate>
+        <div class="field">
+          <label for="pname">Product name</label>
+          <input type="text" id="pname" name="pname" placeholder="e.g. Fresh Tomato" required>
+          <span class="error-text">Enter a product name.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select category</option>
+              <option>Vegetables</option>
+              <option>Fruits</option>
+              <option>Grains</option>
+              <option>Millets</option>
+              <option>Organic</option>
+            </select>
+            <span class="error-text">Select a category.</span>
+          </div>
+          <div class="field">
+            <label for="unit">Unit</label>
+            <select id="unit" name="unit" required>
+              <option value="">Select unit</option>
+              <option value="kg">kg</option>
+              <option value="dozen">dozen</option>
+              <option value="pc">piece</option>
+              <option value="bundle">bundle</option>
+              <option value="500ml">500ml</option>
+              <option value="bunch">bunch</option>
+            </select>
+            <span class="error-text">Select a unit.</span>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="price">Price per unit (&#8377;)</label>
+            <input type="number" id="price" name="price" min="1" placeholder="e.g. 35" required>
+            <span class="error-text">Enter a valid price.</span>
+          </div>
+          <div class="field">
+            <label for="quantity">Available stock quantity</label>
+            <input type="number" id="quantity" name="quantity" min="0" placeholder="e.g. 100" required>
+            <span class="error-text">Enter available stock quantity.</span>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="harvestDate">Harvest date</label>
+            <input type="date" id="harvestDate" name="harvestDate" required>
+            <span class="error-text">Select the harvest date.</span>
+          </div>
+          <div class="field">
+            <label for="location">Farm location</label>
+            <input type="text" id="location" name="location" placeholder="Village / District, State" required>
+            <span class="error-text">Enter the farm location.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="imageChoice">Product image</label>
+          <select id="imageChoice" name="imageChoice" required>
+            <option value="">Choose a representative image</option>
+            <option value="rice.svg">Grains / Rice style</option>
+            <option value="tomato.svg">Tomato style</option>
+            <option value="onion.svg">Onion style</option>
+            <option value="potato.svg">Potato style</option>
+            <option value="carrot.svg">Carrot style</option>
+            <option value="banana.svg">Banana style</option>
+            <option value="mango.svg">Mango style</option>
+            <option value="coconut.svg">Coconut style</option>
+            <option value="groundnut.svg">Groundnut style</option>
+            <option value="sugarcane.svg">Sugarcane style</option>
+            <option value="ragi.svg">Millet (Ragi) style</option>
+            <option value="bajra.svg">Millet (Bajra) style</option>
+            <option value="spinach.svg">Leafy green style</option>
+            <option value="turmeric.svg">Turmeric / spice style</option>
+            <option value="chilli.svg">Chilli style</option>
+            <option value="brinjal.svg">Brinjal style</option>
+            <option value="watermelon.svg">Watermelon style</option>
+            <option value="honey.svg">Honey style</option>
+          </select>
+          <span class="hint">This demo uses illustrated placeholder images grouped by produce type.</span>
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Describe your product: taste, freshness, growing method..." required></textarea>
+          <span class="error-text">Enter a product description.</span>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="organic" name="organic">
+          <label for="organic">This product is certified organic</label>
+        </div>
+        <div class="flex gap-4">
+          <button type="submit" class="btn btn-primary">Publish Product</button>
+          <a href="farmer-dashboard.html" class="btn btn-outline">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/add-product.js"></script>
+</body>
+</html>

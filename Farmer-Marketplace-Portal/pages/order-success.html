@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="success-wrap" id="successWrap">
+      <div class="success-icon" id="successIcon"></div>
+      <h1>Your order has been placed!</h1>
+      <p>Thank you for shopping with FarmConnect. Your farm-fresh produce is being prepared for dispatch.</p>
+
+      <div class="order-id-box">
+        <div><span>Order ID</span><b id="orderIdOut">&mdash;</b></div>
+        <div><span>Payment method</span><b id="paymentOut">&mdash;</b></div>
+        <div><span>Estimated delivery</span><b id="estDeliveryOut">&mdash;</b></div>
+      </div>
+
+      <div class="flex gap-4 justify-between" style="justify-content:center;flex-wrap:wrap;">
+        <a href="#" id="trackOrderLink" class="btn btn-primary">Track My Order</a>
+        <a href="marketplace.html" class="btn btn-outline">Continue Shopping</a>
+      </div>
+    </div>
+
+    <div id="noOrderState" class="empty-state hidden">
+      <h3>No recent order found</h3>
+      <p>Place an order to see its confirmation details here.</p>
+      <a href="marketplace.html" class="btn btn-primary">Browse Marketplace</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('successIcon').innerHTML = ICONS.check;
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id') || sessionStorage.getItem('fmp_last_order');
+    const order = getOrders().find(o => o.id === id);
+    if(!order){
+      document.getElementById('successWrap').classList.add('hidden');
+      document.getElementById('noOrderState').classList.remove('hidden');
+      return;
+    }
+    document.getElementById('orderIdOut').textContent = order.id;
+    document.getElementById('paymentOut').textContent = order.payment === 'cod' ? 'Cash on Delivery' : 'Online Payment';
+    document.getElementById('estDeliveryOut').textContent = formatDate(order.estDelivery);
+    document.getElementById('trackOrderLink').href = `order-tracking.html?id=${order.id}`;
+  });
+</script>
+</body>
+</html>

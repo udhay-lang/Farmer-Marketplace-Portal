@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Registration &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Farmer Registration</div>
+    <h1 style="margin-bottom:.4rem;">Sell your harvest on FarmConnect</h1>
+    <p style="margin-bottom:0;">Create a free farmer account to list products, manage stock and track orders.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="form-card">
+      <form id="farmerRegisterForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Ramesh Kumar" required>
+          <span class="error-text">Enter your full name.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="error-text">Enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="phone">Mobile number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit number" required>
+            <span class="error-text">Enter a valid mobile number.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="farmName">Farm / business name</label>
+          <input type="text" id="farmName" name="farmName" placeholder="e.g. Kaveri Organic Farms" required>
+          <span class="error-text">Enter your farm or business name.</span>
+        </div>
+        <div class="field">
+          <label for="location">Farm location</label>
+          <input type="text" id="location" name="location" placeholder="Village / District, State" required>
+          <span class="error-text">Enter your farm location.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Min. 6 characters" required>
+            <span class="error-text">Password must be at least 6 characters.</span>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+            <span class="error-text">Passwords do not match.</span>
+          </div>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">I agree to the FarmConnect seller terms and quality guidelines.</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create Farmer Account</button>
+        <p class="form-foot">Already have a farmer account? <a href="farmer-login.html" style="color:var(--forest-800);font-weight:700;">Log in</a></p>
+        <p class="form-foot">Are you a customer? <a href="customer-register.html" style="color:var(--forest-800);font-weight:700;">Register here</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

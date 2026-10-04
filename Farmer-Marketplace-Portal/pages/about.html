@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/home.css">
+</head>
+<body data-page="about">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / About Us</div>
+    <h1 style="margin-bottom:.4rem;">Built to put farmers first</h1>
+    <p style="margin-bottom:0;max-width:60ch;">FarmConnect is a student-built marketplace concept exploring how technology can shorten the distance between the people who grow our food and the people who eat it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2" style="align-items:center;gap:3rem;">
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>Why we built FarmConnect</h2>
+      <p>Across India, farmers routinely receive a fraction of the final retail price of their produce, while customers pay a premium for goods that have travelled through several middlemen and lost freshness along the way.</p>
+      <p>FarmConnect was designed as a final-year academic project to demonstrate how a direct, digital marketplace could close that gap &mdash; giving farmers a simple way to list and sell their harvest, and giving customers a transparent view of exactly where their food comes from.</p>
+    </div>
+    <img src="../assets/images/hero-farm.svg" alt="Illustration of a farm at harvest" style="border-radius:var(--r-lg);">
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-200);">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">What we stand for</span>
+      <h2>Our core principles</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="ico" id="ico1"></div>
+        <h3>Fair pricing</h3>
+        <p>Farmers set their own prices with no hidden commission layers eating into their margins.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ico" id="ico2"></div>
+        <h3>Radical transparency</h3>
+        <p>Every listing shows the farmer's name, location and harvest date so customers know exactly what they're buying.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ico" id="ico3"></div>
+        <h3>Community first</h3>
+        <p>We prioritise features that genuinely help small and mid-sized farms reach new customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">The team</span>
+      <h2>A small team, a focused mission</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="testi-card text-center">
+        <div class="testi-avatar" style="margin-inline:auto;width:64px;height:64px;font-size:1.4rem;margin-bottom:1rem;">P</div>
+        <b style="display:block;">Project Lead</b>
+        <span class="text-muted">Full-stack development &amp; UX</span>
+      </div>
+      <div class="testi-card text-center">
+        <div class="testi-avatar" style="margin-inline:auto;width:64px;height:64px;font-size:1.4rem;margin-bottom:1rem;">D</div>
+        <b style="display:block;">Design</b>
+        <span class="text-muted">Visual identity &amp; interaction design</span>
+      </div>
+      <div class="testi-card text-center">
+        <div class="testi-avatar" style="margin-inline:auto;width:64px;height:64px;font-size:1.4rem;margin-bottom:1rem;">R</div>
+        <b style="display:block;">Research</b>
+        <span class="text-muted">Farmer &amp; customer interviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Curious how it all works?</h2>
+        <p>Explore the marketplace as a customer, or register to see the farmer's side of the platform.</p>
+      </div>
+      <div class="flex gap-4" style="flex-wrap:wrap;">
+        <a href="marketplace.html" class="btn btn-accent">Explore Marketplace</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('ico1').innerHTML = ICONS.wallet;
+    document.getElementById('ico2').innerHTML = ICONS.eye;
+    document.getElementById('ico3').innerHTML = ICONS.users;
+  });
+</script>
+</body>
+</html>

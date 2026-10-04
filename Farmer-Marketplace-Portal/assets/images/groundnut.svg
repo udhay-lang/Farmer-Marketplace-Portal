@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3E6C8"/>
+      <stop offset="100%" stop-color="#E7CFA0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="40" r="70" fill="#B08A3E" opacity="0.12"/>
+  <circle cx="40" cy="270" r="90" fill="#B08A3E" opacity="0.10"/>
+  <g transform="translate(200,128)">
+    <circle r="58" fill="#ffffff" opacity="0.55"/>
+    <text x="0" y="10" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#B08A3E" text-anchor="middle">GNT</text>
+  </g>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#2b2b23" text-anchor="middle">Groundnut</text>
+  <text x="200" y="262" font-family="Arial, sans-serif" font-size="12" letter-spacing="1" fill="#B08A3E" text-anchor="middle">FARM FRESH</text>
+</svg>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<div class="dash-shell">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-user">
+      <span class="dot" id="sideInitial">C</span>
+      <div><b id="sideName">Customer</b><span id="sideEmail"></span></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="#overview" data-tab="overview" class="active">Overview</a>
+      <a href="#orders" data-tab="orders">My Orders</a>
+      <a href="#wishlist" data-tab="wishlist">Wishlist</a>
+      <a href="#profile" data-tab="profile">Profile Settings</a>
+      <a href="#" class="logout-link" id="logoutLink">Log Out</a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-head">
+      <button class="icon-btn dash-toggle" id="dashToggle"></button>
+      <div>
+        <h2 style="margin-bottom:.2rem;" id="panelTitle">Overview</h2>
+        <p class="text-muted" id="panelSub">Welcome back to your FarmConnect dashboard.</p>
+      </div>
+      <a href="marketplace.html" class="btn btn-primary btn-sm">Continue Shopping</a>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="dash-panel" id="panel-overview">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="ico" id="icoOrders"></div><b id="statTotalOrders">0</b><span>Total orders</span></div>
+        <div class="stat-card accent"><div class="ico" id="icoPending"></div><b id="statPending">0</b><span>Orders in progress</span></div>
+        <div class="stat-card"><div class="ico" id="icoDelivered"></div><b id="statDelivered">0</b><span>Delivered orders</span></div>
+        <div class="stat-card"><div class="ico" id="icoWishlist"></div><b id="statWishlist">0</b><span>Wishlist items</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Recent orders</h3><a href="#orders" data-tab="orders" class="btn btn-ghost btn-sm">View all</a></div>
+        <div class="table-scroll">
+          <table class="data-table" id="recentOrdersTable">
+            <thead><tr><th>Order ID</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section class="dash-panel hidden" id="panel-orders">
+      <div class="panel">
+        <div class="panel-head"><h3>Order history</h3></div>
+        <div class="table-scroll">
+          <table class="data-table" id="allOrdersTable">
+            <thead><tr><th>Order ID</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="ordersEmpty" class="empty-state hidden">
+          <h3>No orders yet</h3><p>Your placed orders will show up here.</p>
+          <a href="marketplace.html" class="btn btn-primary">Browse Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WISHLIST -->
+    <section class="dash-panel hidden" id="panel-wishlist">
+      <div class="panel">
+        <div class="panel-head"><h3>My wishlist</h3></div>
+        <div class="grid grid-4" id="wishlistGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="dash-panel hidden" id="panel-profile">
+      <div class="panel" style="max-width:560px;">
+        <div class="panel-head"><h3>Profile settings</h3></div>
+        <form id="profileForm">
+          <div class="field"><label for="pName">Full name</label><input type="text" id="pName" required></div>
+          <div class="field"><label for="pEmail">Email</label><input type="email" id="pEmail" disabled></div>
+          <div class="field"><label for="pPhone">Mobile number</label><input type="tel" id="pPhone" required></div>
+          <div class="field"><label for="pAddress">Delivery address</label><textarea id="pAddress" rows="3" required></textarea></div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/product-card.js"></script>
+<script src="../js/customer-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FarmConnect &mdash; Fresh From Farm to Your Table</title>
+<meta name="description" content="FarmConnect is a farmer-to-customer marketplace for fresh, honestly-priced produce sourced directly from Indian farms.">
+<link rel="icon" href="assets/images/logo.svg">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body data-page="home">
+
+<div id="navbar-mount"></div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Direct from Indian farms</span>
+      <h1>Fresh harvests, straight from the farmer who grew them.</h1>
+      <p>FarmConnect removes the middlemen. Farmers set fair prices and manage their own stock; you get vegetables, fruits, grains and organic goods picked in the last few days &mdash; not weeks ago.</p>
+      <div class="hero-cta">
+        <a href="pages/marketplace.html" class="btn btn-primary">Shop the Marketplace</a>
+        <a href="pages/farmer-register.html" class="btn btn-outline">Sell as a Farmer</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>1,200+</b><span>Farmers onboarded</span></div>
+        <div class="hero-stat"><b>18</b><span>Fresh product lines</span></div>
+        <div class="hero-stat"><b>4.6&#9733;</b><span>Average customer rating</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/images/hero-farm.svg" alt="Illustration of a farm field at harvest time">
+      <div class="hero-float-card">
+        <div class="ico"></div>
+        <div><b>Delivered in 24&ndash;48 hrs</b><span>Picked after you order</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Browse by category</span>
+      <h2>Everything from the field, sorted for you</h2>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-tile" href="pages/marketplace.html?category=Vegetables"><img src="assets/images/cat-vegetables.svg" alt="Vegetables"><b>Vegetables</b><span>Tomato, onion &amp; more</span></a>
+      <a class="cat-tile" href="pages/marketplace.html?category=Fruits"><img src="assets/images/cat-fruits.svg" alt="Fruits"><b>Fruits</b><span>Mango, banana &amp; more</span></a>
+      <a class="cat-tile" href="pages/marketplace.html?category=Grains"><img src="assets/images/cat-grains.svg" alt="Grains"><b>Grains</b><span>Rice, groundnut &amp; more</span></a>
+      <a class="cat-tile" href="pages/marketplace.html?category=Millets"><img src="assets/images/cat-millets.svg" alt="Millets"><b>Millets</b><span>Ragi, bajra &amp; more</span></a>
+      <a class="cat-tile" href="pages/marketplace.html?category=Organic"><img src="assets/images/cat-organic.svg" alt="Organic"><b>Organic</b><span>Turmeric, honey &amp; more</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED PRODUCTS ================= -->
+<section class="section" style="background:var(--cream-200);">
+  <div class="container">
+    <div class="section-row">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="eyebrow">Handpicked this week</span>
+        <h2>Featured products</h2>
+      </div>
+      <a href="pages/marketplace.html" class="btn btn-outline btn-sm">View all products</a>
+    </div>
+    <div class="grid grid-4" id="featuredGrid"></div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Why FarmConnect</span>
+      <h2>Built for both sides of the harvest</h2>
+    </div>
+    <div class="benefit-tabs">
+      <button class="active" data-tab="customer">For Customers</button>
+      <button data-tab="farmer">For Farmers</button>
+    </div>
+    <div class="benefit-grid" id="benefitPanelCustomer">
+      <div class="benefit-card">
+        <div class="ico">{{leaf}}</div>
+        <h3>Farm-fresh, always</h3>
+        <p>Produce is listed by the farmer within days of harvest, so what reaches you is genuinely fresh.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ico">{{wallet}}</div>
+        <h3>Fair, transparent prices</h3>
+        <p>No hidden middleman margins &mdash; the price you see is what supports the farmer directly.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ico">{{truck}}</div>
+        <h3>Tracked doorstep delivery</h3>
+        <p>Follow every order from placed to delivered with a clear, real-time tracking timeline.</p>
+      </div>
+    </div>
+    <div class="benefit-grid hidden" id="benefitPanelFarmer">
+      <div class="benefit-card">
+        <div class="ico">{{box}}</div>
+        <h3>List produce in minutes</h3>
+        <p>Add products, set your own price and update stock from a simple farmer dashboard.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ico">{{chart}}</div>
+        <h3>Track sales &amp; orders</h3>
+        <p>See pending orders, completed sales and revenue at a glance, updated in real time.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ico">{{users}}</div>
+        <h3>Reach customers directly</h3>
+        <p>Sell straight to households in your region without depending on wholesale middlemen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div><b>1,200+</b><span>Registered farmers</span></div>
+      <div><b>8,500+</b><span>Happy customers</span></div>
+      <div><b>32,000+</b><span>Orders delivered</span></div>
+      <div><b>21</b><span>Districts covered</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">What people say</span>
+      <h2>Trusted by farmers and families alike</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-quote">"I get vegetables that taste like they were picked yesterday &mdash; because they were. Ordering is simple and delivery has always been on time."</p>
+        <div class="testi-person"><div class="testi-avatar">A</div><div><b>Arjun Mehta</b><span>Customer, Chennai</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-quote">"FarmConnect let me sell my turmeric and honey directly to city customers. My income has grown since I stopped depending on a single local trader."</p>
+        <div class="testi-person"><div class="testi-avatar">R</div><div><b>Ravi Shankar</b><span>Farmer, Erode</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="testi-quote">"The order tracking is genuinely useful &mdash; I always know exactly when my fruit box will arrive. Great for weekly grocery planning."</p>
+        <div class="testi-person"><div class="testi-avatar">S</div><div><b>Sneha Reddy</b><span>Customer, Hyderabad</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Ready to taste the difference?</h2>
+        <p>Browse this week's harvest or list your first product as a farmer &mdash; both take less than two minutes.</p>
+      </div>
+      <div class="flex gap-4" style="flex-wrap:wrap;">
+        <a href="pages/marketplace.html" class="btn btn-accent">Start Shopping</a>
+        <a href="pages/farmer-register.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Join as Farmer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/product-card.js"></script>
+<script>
+  // Replace icon placeholders (kept as {{name}} in markup above for readability)
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.querySelectorAll('.benefit-card .ico').forEach(el=>{
+      const key = el.textContent.replace(/[{}]/g,'').trim();
+      if(ICONS[key]) el.innerHTML = ICONS[key];
+    });
+    document.querySelector('.hero-float-card .ico').innerHTML = ICONS.truck;
+
+    // Featured products = top rated, in-stock first
+    const products = getProducts().slice().sort((a,b)=> b.rating - a.rating).slice(0,8);
+    renderProductGrid(document.getElementById('featuredGrid'), products);
+
+    // benefit tabs
+    document.querySelectorAll('.benefit-tabs button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.benefit-tabs button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = btn.getAttribute('data-tab');
+        document.getElementById('benefitPanelCustomer').classList.toggle('hidden', tab!=='customer');
+        document.getElementById('benefitPanelFarmer').classList.toggle('hidden', tab!=='farmer');
+      });
+    });
+  });
+</script>
+</body>
+</html>

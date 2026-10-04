@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="marketplace">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Marketplace</div>
+    <h1 style="margin-bottom:.4rem;">Marketplace</h1>
+    <p style="margin-bottom:0;">Browse fresh produce listed directly by verified farmers across India.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="market-layout">
+
+      <aside class="filter-panel" id="filterPanel">
+        <div class="flex justify-between items-center mb-4">
+          <h4 style="margin:0;">Filters</h4>
+          <button class="icon-btn" id="closeFilter" style="display:none;">&times;</button>
+        </div>
+
+        <fieldset class="filter-group">
+          <legend>Category</legend>
+          <div id="categoryFilters"></div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Price range (per unit)</legend>
+          <input type="range" id="priceRange" min="0" max="500" step="10" value="500" style="width:100%;accent-color:var(--forest-700);">
+          <div class="range-row"><span>&#8377;0</span><span id="priceRangeLabel">Up to &#8377;500</span></div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Location</legend>
+          <div id="locationFilters"></div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Other</legend>
+          <label class="filter-option"><input type="checkbox" id="organicOnly"> Organic only</label>
+          <label class="filter-option"><input type="checkbox" id="inStockOnly"> In stock only</label>
+        </fieldset>
+
+        <button class="btn btn-outline btn-block btn-sm" id="clearFilters">Clear all filters</button>
+      </aside>
+
+      <div>
+        <div class="market-toolbar">
+          <div class="search-box">
+            <span></span>
+            <input type="text" id="searchInput" placeholder="Search for rice, tomato, mango...">
+          </div>
+          <button class="btn btn-outline btn-sm mobile-filter-btn" id="openFilter">Filters</button>
+          <select class="sort-select" id="sortSelect">
+            <option value="relevance">Sort: Relevance</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Freshly Harvested</option>
+          </select>
+        </div>
+        <p class="result-count mb-4" id="resultCount"></p>
+        <div class="grid grid-3" id="productGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/product-card.js"></script>
+<script src="../js/marketplace.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="marketplace">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="marketplace.html">Marketplace</a> / <span id="crumbName">Product</span></div>
+  </div>
+</section>
+
+<section class="section" id="productSection">
+  <div class="container">
+    <div id="loadingState" class="grid grid-2" style="gap:2.5rem;">
+      <div class="skeleton skeleton-card" style="height:420px;"></div>
+      <div>
+        <div class="skeleton" style="height:24px;width:40%;margin-bottom:1rem;"></div>
+        <div class="skeleton" style="height:40px;width:80%;margin-bottom:1rem;"></div>
+        <div class="skeleton" style="height:100px;width:100%;margin-bottom:1rem;"></div>
+      </div>
+    </div>
+
+    <div id="pdContent" class="hidden">
+      <div class="pd-layout">
+        <div class="pd-gallery">
+          <img id="pdImage" src="" alt="">
+        </div>
+        <div class="pd-info">
+          <span class="product-cat" id="pdCategory"></span>
+          <h1 id="pdName"></h1>
+          <div class="rating" id="pdRating"></div>
+          <div class="pd-price-block">
+            <span class="price" id="pdPrice"></span>
+            <span class="text-muted" id="pdUnit"></span>
+          </div>
+          <p id="pdDescription"></p>
+
+          <div class="pd-farmer">
+            <div class="dot" id="pdFarmerInitial"></div>
+            <div>
+              <b id="pdFarmerName"></b>
+              <span id="pdFarmerLocation"></span>
+            </div>
+          </div>
+
+          <div id="pdStockNote"></div>
+
+          <label style="font-weight:700;font-size:.86rem;display:block;margin-bottom:.5rem;">Quantity</label>
+          <div class="qty-selector">
+            <button type="button" id="qtyMinus">&minus;</button>
+            <input type="number" id="qtyInput" value="1" min="1">
+            <button type="button" id="qtyPlus">+</button>
+          </div>
+
+          <div class="pd-actions">
+            <button class="btn btn-outline" id="addCartBtn">Add to Cart</button>
+            <button class="btn btn-primary" id="buyNowBtn">Buy Now</button>
+            <button class="btn btn-ghost" id="wishToggleBtn"></button>
+          </div>
+
+          <div class="pd-meta-grid">
+            <div class="item"><span>Harvest date</span><b id="pdHarvest"></b></div>
+            <div class="item"><span>Available stock</span><b id="pdStock"></b></div>
+            <div class="item"><span>Organic certified</span><b id="pdOrganic"></b></div>
+            <div class="item"><span>Category</span><b id="pdCategory2"></b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pd-tabs">
+        <button class="active" data-pdtab="reviews">Reviews</button>
+        <button data-pdtab="farmer">Farmer Info</button>
+        <button data-pdtab="delivery">Delivery Info</button>
+      </div>
+      <div class="pd-tab-panel active" id="tab-reviews"></div>
+      <div class="pd-tab-panel" id="tab-farmer"></div>
+      <div class="pd-tab-panel" id="tab-delivery">
+        <p>Orders are packed within 24 hours of confirmation and typically delivered in 2&ndash;4 days depending on your location. You can track every step from the Order Tracking page once your order is placed.</p>
+        <p style="margin-bottom:0;">Cash on Delivery and Online Payment are both accepted at checkout.</p>
+      </div>
+
+      <div class="section-row" style="margin-top:3rem;">
+        <h2 style="margin:0;">Related products</h2>
+      </div>
+      <div class="grid grid-4" id="relatedGrid"></div>
+    </div>
+
+    <div id="notFoundState" class="empty-state hidden">
+      <h3>Product not found</h3>
+      <p>This product may have been removed. Browse the marketplace to find something else.</p>
+      <a href="marketplace.html" class="btn btn-primary">Back to Marketplace</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/product-card.js"></script>
+<script src="../js/product-details.js"></script>
+</body>
+</html>

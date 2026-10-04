@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Dashboard &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<div class="dash-shell">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-user">
+      <span class="dot" id="sideInitial">F</span>
+      <div><b id="sideName">Farmer</b><span id="sideEmail"></span></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="#overview" data-tab="overview" class="active">Overview</a>
+      <a href="manage-products.html">Manage Products</a>
+      <a href="#orders" data-tab="orders">Orders</a>
+      <a href="add-product.html">Add Product</a>
+      <a href="#profile" data-tab="profile">Profile Settings</a>
+      <a href="#" class="logout-link" id="logoutLink">Log Out</a>
+    </nav>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-head">
+      <button class="icon-btn dash-toggle" id="dashToggle"></button>
+      <div>
+        <h2 style="margin-bottom:.2rem;" id="panelTitle">Overview</h2>
+        <p class="text-muted" id="panelSub">A quick look at your farm's performance on FarmConnect.</p>
+      </div>
+      <a href="add-product.html" class="btn btn-primary btn-sm">+ Add Product</a>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="dash-panel" id="panel-overview">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="ico" id="icoProducts"></div><b id="statProducts">0</b><span>Total products listed</span></div>
+        <div class="stat-card accent"><div class="ico" id="icoPending"></div><b id="statPendingOrders">0</b><span>Pending orders</span></div>
+        <div class="stat-card"><div class="ico" id="icoOrders"></div><b id="statTotalOrders">0</b><span>Total orders received</span></div>
+        <div class="stat-card"><div class="ico" id="icoSales"></div><b id="statSales">&#8377;0</b><span>Total sales revenue</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Recent orders</h3><a href="#orders" data-tab="orders" class="btn btn-ghost btn-sm">View all</a></div>
+        <div class="table-scroll">
+          <table class="data-table" id="recentOrdersTable">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Low stock alerts</h3></div>
+        <div class="mini-list" id="lowStockList"></div>
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section class="dash-panel hidden" id="panel-orders">
+      <div class="panel">
+        <div class="panel-head"><h3>Orders containing my products</h3></div>
+        <div class="table-scroll">
+          <table class="data-table" id="allOrdersTable">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th><th>Update</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="ordersEmpty" class="empty-state hidden">
+          <h3>No orders yet</h3><p>Orders for your products will appear here once customers start buying.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="dash-panel hidden" id="panel-profile">
+      <div class="panel" style="max-width:560px;">
+        <div class="panel-head"><h3>Profile settings</h3></div>
+        <form id="profileForm">
+          <div class="field"><label for="pName">Full name</label><input type="text" id="pName" required></div>
+          <div class="field"><label for="pEmail">Email</label><input type="email" id="pEmail" disabled></div>
+          <div class="field"><label for="pPhone">Mobile number</label><input type="tel" id="pPhone" required></div>
+          <div class="field"><label for="pFarmName">Farm / business name</label><input type="text" id="pFarmName" required></div>
+          <div class="field"><label for="pLocation">Farm location</label><input type="text" id="pLocation" required></div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/farmer-dashboard.js"></script>
+</body>
+</html>

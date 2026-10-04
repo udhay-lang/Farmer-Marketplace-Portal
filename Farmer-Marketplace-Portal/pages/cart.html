@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart &mdash; FarmConnect</title>
+<link rel="icon" href="../assets/images/logo.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="">
+
+<div id="navbar-mount"></div>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Shopping Cart</div>
+    <h1 style="margin-bottom:0;">Your Cart</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div id="cartEmptyState" class="empty-state hidden">
+      <div class="empty-icon" id="cartEmptyIcon" style="color:var(--leaf-600);"></div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added anything yet. Explore the marketplace to find fresh produce.</p>
+      <a href="marketplace.html" class="btn btn-primary">Browse Marketplace</a>
+    </div>
+
+    <div id="cartLayout" class="cart-layout hidden">
+      <div>
+        <div class="panel" style="margin-bottom:1rem;">
+          <div class="panel-head"><h3>Items (<span id="itemCount">0</span>)</h3></div>
+          <div id="cartItemsList"></div>
+        </div>
+        <a href="marketplace.html" class="btn btn-ghost btn-sm">&larr; Continue Shopping</a>
+      </div>
+
+      <div class="summary-card">
+        <h3 style="font-size:1.1rem;">Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">&#8377;0</span></div>
+        <div class="summary-row"><span>Delivery charge</span><span id="sumDelivery">&#8377;0</span></div>
+        <div class="promo-row">
+          <input type="text" id="promoInput" placeholder="Promo code">
+          <button class="btn btn-outline btn-sm" id="applyPromo">Apply</button>
+        </div>
+        <div class="summary-row total"><span>Total</span><span id="sumTotal">&#8377;0</span></div>
+        <button class="btn btn-primary btn-block mt-4" id="checkoutBtn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/product-card.js"></script>
+<script src="../js/cart.js"></script>
+</body>
+</html>
